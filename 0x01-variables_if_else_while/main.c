@@ -5,13 +5,24 @@
  *
  * Return: Always 0.
  */
+
 int main(void)
 {
-	char c;
-	int n;
+	int i = 0, j;
 
-	printf("Address of variable 'c': %p\n", &c);
-	printf("Address of variable 'n': %p\n", &n);
+	while(i < 5)
+	{
+		j = 0;
+		while(j < 3)
+		{
+			printf("2 ");
+			j++;
+		}
+
+		printf("\n");
+		i++;
+	}
+
 
 	return (0);
 }
