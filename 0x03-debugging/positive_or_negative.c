@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * positve_or_negative - this function checks for
+ * positive_or_negative - this function checks for
  * positive or negative numbers
  *
  * @i: the number to be cjecked
