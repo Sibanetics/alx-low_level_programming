@@ -1,28 +1,31 @@
 #include "main.h"
 
 /**
- * is_prime_number - checks if a number is a prime number
+ * is_prime_helper - checks if a number is a prime no.
  * @n: the number to check
+ * @i: the current divisor to check
  *
  * Return: 1 if n is a prime number , 0 otherwise
  */
-int is_prime_number(int n)
+int is_prime_helper(int n, int i)
 {
-	int i;
-
 	if (n <= 1)
 		return (0);
-	if (n <= 3)
+	if (i >= n)
 		return (1);
 
-	if (n % 2 == 0 || n % 3 == 0)
+	if (n % i == 0)
 		return (0);
 
+	return (is_prime_helper(n, i + 1));
+}
 
-	for (i = 5; i * i <= n; i += 6)
-	{
-		if (n % i == 0 || n % (i + 2) == 0)
-			return (0);
-	}
-	return (1);
+/**
+ * is_prime_number - checks if a number is prime
+ * @n: the number to check
+ * Return: 1 is n is prime, 0 otherwise
+ */
+int is_prime_number(int n)
+{
+	return (is_prime_helper(n, 2));
 }
